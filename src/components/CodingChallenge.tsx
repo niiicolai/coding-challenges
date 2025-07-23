@@ -31,9 +31,9 @@ export default function CodingChallenge({
     () =>
       `
     export default function App() {
-      let twoSum;
+      let solution;
       try {
-        twoSum = ${userCode}
+        solution = ${userCode}
       } catch (e) {
         return <div>{e.message}</div>
       }

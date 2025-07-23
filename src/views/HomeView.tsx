@@ -32,12 +32,20 @@ export default function HomeView() {
           <div>
             <h2 className="text-2xl font-bold mb-6">Problems:</h2>
 
-            <Link
-              to="/challenge/two-sum"
-              className="border border-white px-3 py-1 w-full rounded-md cursor-pointer hover:bg-white hover:text-black"
-            >
-              Two Sum
-            </Link>
+            <div className="grid grid-cols-5 gap-3">
+              <Link
+                to="/challenge/two-sum"
+                className="flex items-center justify-center border border-white px-3 py-1 w-full rounded-md cursor-pointer hover:bg-white hover:text-black"
+              >
+                Two Sum
+              </Link>
+              <Link
+                to="/challenge/binary-search"
+                className="flex items-center justify-center border border-white px-3 py-1 w-full rounded-md cursor-pointer hover:bg-white hover:text-black"
+              >
+                Binary Search
+              </Link>
+            </div>
           </div>
 
           <div>

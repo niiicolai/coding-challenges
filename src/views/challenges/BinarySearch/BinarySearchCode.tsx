@@ -1,28 +1,28 @@
 import CodingChallenge from "../../../components/CodingChallenge";
 
-export default function TwoSumCode({
+export default function BinarySearchCode({
   result,
 }: {
   result: { correct: boolean; ended: boolean };
 }) {
   const placeholderFunction = `
 /**
- * Finds two indices of numbers in the array that add up to the target.
+ * Finds the index of the target number in an array of numbers.
  * 
- * @function twoSum
+ * @function binarySearch
  * @param {number[]} numbers - Array of numbers to search.
- * @param {number} target - Target sum to find.
- * @returns {number[]} An array containing the two indices. Returns [-1, -1] if no valid pair is found.
+ * @param {number} target - Target number.
+ * @returns {number} Index of the target number. Returns -1 if no target number is found.
  */
 (numbers, target) => {
-  return [-1, -1];
+  return -1;
 }`.trim();
 
   const testCases = `const testCases = [
-      { input: [2, 7, 11, 15], target: 9, expected: [0, 1], control: false },
-      { input: [3, 2, 4], target: 6, expected: [1, 2], control: false },
-      { input: [1, 5, 3, 4], target: 9, expected: [1, 3], control: false },
-      { input: [1, 2, 3], target: 7, expected: [-1, -1], control: true },
+      { input: [1, 2, 3, 4], target: 3, expected: 2, control: false },
+      { input: [1, 2], target: 2, expected: 1, control: false },
+      { input: [5, 6, 8, 11], target: 11, expected: 3, control: false },
+      { input: [2, 3, 4, 7, 9], target: 22, expected: -1, control: true },
     ];`.trim();
 
   const renderResult = `const renderResult = (tc, index) => {
@@ -30,19 +30,12 @@ export default function TwoSumCode({
                   const target = tc.target;
                   const expected = tc.expected;
                   const control = tc.control;
-    let result = [];
+    let result = -1;
     let correct = false;
 
     try {
       result = solution([...input], target);
-      correct =
-        (Array.isArray(result) &&
-        result.length === 2 &&
-        input[result[0]] + input[result[1]] === target) 
-        || 
-        (control === true && 
-        result.length === expected.length &&
-        result.every((val, index) => val === expected[index]));
+      correct = result === expected;
     } catch {}
 
     return (
@@ -58,12 +51,12 @@ export default function TwoSumCode({
       >
         <div><strong>Input:</strong> [{input.join(", ")}]</div>
         <div><strong>Target:</strong> {target}</div>
-        <div><strong>Expected:</strong> [{expected.join(", ")}]</div>
-        {result && Array.isArray(result) && (
-           <div><strong>Result:</strong> [{result?.join(", ")}]</div>
+        <div><strong>Expected:</strong> {expected}</div>
+        {result && !Number.isNaN(result) && (
+           <div><strong>Result:</strong> {result}</div>
         )}
-        {!Array.isArray(result) && (
-           <div><strong>Result:</strong> The function must return an array.</div>
+        {Number.isNaN(result) && (
+           <div><strong>Result:</strong> The function must return a number.</div>
         )}
        
         <div style={{ color: correct ? "green" : "crimson", fontWeight: "bold" }}>
@@ -79,8 +72,7 @@ export default function TwoSumCode({
       <div className="mb-6">
         <h2 className="text-2xl mb-3">JavaScript Coding Challenge</h2>
         <p className="mb-3">
-          Write a function that finds the indices of two numbers in an array
-          that add up to a given target.
+          Write a function that finds the index of the target number in a sorted array.
         </p>
 
         <div className="relative mb-3">
@@ -100,8 +92,7 @@ export default function TwoSumCode({
         <small className="block">
           While you could check every possible pair using nested loops,
           challenge yourself to implement it with a single loop by leveraging
-          the strategy you used in the logic challenge. (Hint: Think about how
-          you keep track of what you’ve already seen!)
+          the strategy you used in the logic challenge. (Hint: Think about how you can divide the number of possiblities for getting the answer!)
         </small>
       </div>
     </>
