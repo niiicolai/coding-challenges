@@ -1,6 +1,8 @@
 import HomeView from '../views/HomeView';
+
 import TwoSumView from '../views/challenges/TwoSum/TwoSumView';
-import BinarySearchView from '../views/challenges/BinarySearch/BinarySearchView';
+import FindIndexNumberSortedListView from '../views/challenges/FindIndexNumberSortedList/FindIndexNumberSortedListView';
+import LongestNonRepeatingSubstringView from '../views/challenges/LongestNonRepeatingSubstring/LongestNonRepeatingSubstringView';
 
 export const routes = [
   {
@@ -12,7 +14,11 @@ export const routes = [
     element: <TwoSumView />,
   },
   {
-    path: "/challenge/binary-search",
-    element: <BinarySearchView />,
+    path: "/challenge/find-index-number-sorted-list",
+    element: <FindIndexNumberSortedListView />,
+  },
+  {
+    path: "/challenge/longest-non-repeating-substring",
+    element: <LongestNonRepeatingSubstringView />,
   },
 ];

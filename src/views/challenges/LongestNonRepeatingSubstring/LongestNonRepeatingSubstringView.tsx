@@ -1,9 +1,9 @@
 import { useState } from "react";
-import TwoSumCode from "./TwoSumCode";
-import TwoSumGame from "./TwoSumGame";
+import TwoSumCode from "./LongestNonRepeatingSubstringCode";
+import TwoSumGame from "./LongestNonRepeatingSubstringGame";
 import { Link } from "react-router-dom";
 
-export default function TwoSumView() {
+export default function LongestNonRepeatingSubstringView() {
   const [result, setResult] = useState<{ correct: boolean; ended: boolean }>({
     correct: false,
     ended: false,
@@ -15,8 +15,10 @@ export default function TwoSumView() {
         <div className="mx-auto" style={{ maxWidth: "60em" }}>
           <div className="flex items-center justify-between gap-3 mb-6">
             <div>
-              <h1 className="text-3xl font-bold">Two Sum</h1>
-              <small>Published: 07/23/2025</small>
+              <h1 className="text-3xl font-bold">
+                Longest Non-Repeating Substring
+              </h1>
+              <small>Published: 07/24/2025</small>
             </div>
             <div>
               <Link
@@ -27,30 +29,36 @@ export default function TwoSumView() {
               </Link>
             </div>
           </div>
+
           <p className="mb-3">
-            Two Sum is a classic puzzle: find two numbers in a list that add up
-            to a target number. It’s a simple problem, but there’s more to it
-            than just brute force.
+            The <strong>Longest Non-Repeating Substring</strong> problem asks
+            you to find the longest substring within a string that contains no
+            repeated characters. This is a classic challenge that demonstrates
+            how to efficiently analyze sequences without redundant checks.
           </p>
 
           <p className="mb-3">
-            First, take on the logic challenge below. You’ll reveal hidden cards
-            and figure out which two add up to the target. The solution might
-            seem obvious at first, but implementing it in code requires stepping
-            back and thinking holistically.
+            The <strong>Sliding Window</strong> technique is an effective way to
+            solve such problems. Instead of checking every possible substring
+            (which can be very slow), a sliding window uses two pointers to
+            represent a range within the string, expanding and shrinking
+            dynamically to maintain the desired property, in this case, no
+            repeated characters.
           </p>
 
           <p className="mb-3">
-            As you work through the challenge, think about how remembering a
-            card you've already seen is like saving it to a{" "}
-            <strong>hash map</strong>. This allows you to check for a match
-            instantly, rather than scanning the entire list again, a key to
-            solving the problem efficiently.
+            In the upcoming logic challenge, you’ll control a sliding window
+            over a target string to find non-repeating substrings. Your
+            goal is to keep moving the end pointer forward, cutting substrings
+            along the way, until you reach the end of the string. This hands-on
+            experience will help you grasp the sliding window technique and the
+            logic behind finding the longest substring without repeated
+            characters.
           </p>
 
           <p>
-            Beat the logic challenge, and the coding challenge will unlock for
-            you. Let’s get started!
+            Solve the logic challenge, and the coding challenge will unlock for
+            you. Ready to dive in?
           </p>
         </div>
       </div>
@@ -75,17 +83,15 @@ export default function TwoSumView() {
           <div>
             <h2 className="text-2xl mb-3">Hint</h2>
             <p>
-              If you solve the logic challenge using memory instead of brute
-              force, you’re already halfway to writing the actual function!
+              Keep track of the current window and the longest string you have
+              seen so far.
             </p>
           </div>
 
           <div>
             <h2 className="text-2xl mb-3">Credits</h2>
             <p>
-              This site was inspired by classic algorithm problems, including
-              the Two Sum challenge, which is well-known from platforms like
-              LeetCode. This site and its content is offered free of charge for
+              This site and its content is offered free of charge for
               educational and practice purposes.
             </p>
           </div>

@@ -9,7 +9,7 @@ export default function HomeView() {
           style={{ maxWidth: "60em" }}
         >
           <div>
-            <h1 className="text-3xl font-bold mb-6">
+            <h1 className="text-3xl font-bold mb-3">
               Learn to optimize your code
             </h1>
             <p className="mb-3">
@@ -30,26 +30,32 @@ export default function HomeView() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold mb-6">Problems:</h2>
+            <h2 className="text-2xl font-bold mb-3">Problems:</h2>
 
             <div className="grid grid-cols-5 gap-3">
               <Link
                 to="/challenge/two-sum"
-                className="flex items-center justify-center border border-white px-3 py-1 w-full rounded-md cursor-pointer hover:bg-white hover:text-black"
+                className="flex items-center justify-center text-center border border-white px-3 py-1 w-full rounded-md cursor-pointer hover:bg-white hover:text-black"
               >
                 Two Sum
               </Link>
               <Link
-                to="/challenge/binary-search"
-                className="flex items-center justify-center border border-white px-3 py-1 w-full rounded-md cursor-pointer hover:bg-white hover:text-black"
+                to="/challenge/find-index-number-sorted-list"
+                className="flex items-center justify-center text-center border border-white px-3 py-1 w-full rounded-md cursor-pointer hover:bg-white hover:text-black"
               >
-                Binary Search
+                Find Index of Number in Sorted List
+              </Link>
+              <Link
+                to="/challenge/longest-non-repeating-substring"
+                className="flex items-center justify-center text-center border border-white px-3 py-1 w-full rounded-md cursor-pointer hover:bg-white hover:text-black"
+              >
+                Longest Non-Repeating Substring
               </Link>
             </div>
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold mb-6">Author:</h2>
+            <h2 className="text-2xl font-bold mb-3">Author:</h2>
 
             <p className="mb-3">
               Hi! My name is Nicolai, a software developer from Denmark. I love

@@ -5,7 +5,7 @@ interface Result {
   ended: boolean;
 }
 
-interface BinarySearchGameProps {
+interface FindIndexNumberSortedListProps {
   result: Result;
   setResult: (value: Result) => void;
 }
@@ -14,10 +14,10 @@ const guessTypes = { lower: "lower", is: "is", higher: "higher" };
 const range = { min: 1, max: 100 };
 const maxAttempts = 11;
 
-export default function BinarySearchGame({
+export default function FindIndexNumberSortedListGame({
   result,
   setResult,
-}: BinarySearchGameProps) {
+}: FindIndexNumberSortedListProps) {
   const randomNumber = () =>
     Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
 
